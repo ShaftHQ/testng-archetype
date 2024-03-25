@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.github.shafthq</groupId>
+    <artifactId>testng-archetype</artifactId>
+    <version>8.1.20240324</version>
+    <packaging>maven-archetype</packaging>
+    <name>SHAFT_Engine: TestNG Archetype</name>
+    <description>SHAFT_Engine: TestNG Archetype</description>
+    <properties>
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+        <maven-archetype-packaging.version>3.2.1</maven-archetype-packaging.version>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                    <encoding>UTF-8</encoding>
+                    <maxmem>10240m</maxmem>
+                    <meminitial>1024m</meminitial>
+                </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-archetype-plugin</artifactId>
+                    <configuration>
+                        <ignoreEOLStyle>true</ignoreEOLStyle>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.archetype</groupId>
+                <artifactId>archetype-packaging</artifactId>
+                <version>${maven-archetype-packaging.version}</version>
+            </extension>
+        </extensions>
+    </build>
+</project>
