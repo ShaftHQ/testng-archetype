@@ -9,6 +9,7 @@ To Generate a project just follow these simple steps:
 3. Create a new directory for the project, and navigate to it.
 4. Open a Terminal window in the target directory and execute the below command.
 ```shell
-mvn archetype:generate "-DarchetypeGroupId=io.github.shafthq" "-DarchetypeArtifactId=testng-archetype" "-DarchetypeVersion=${archetype.version}"
+mvn archetype:generate "-DarchetypeGroupId=io.github.shafthq" "-DarchetypeArtifactId=testng-archetype" "-DarchetypeVersion=${archetype.version}" "-DinteractiveMode=false" "-DgroupId=io.github.shafthq" "-DartifactId=using_SHAFT_Engine"
 ```
-Note: Replace `${archetype.version}` with [the latest SHAFT_Engine: TestNG Archetype version](https://github.com/ShaftHQ/testng-archetype/releases/latest).
+**_NOTE 1: Replace `${archetype.version}` with [the latest SHAFT_Engine: TestNG Archetype version](https://github.com/ShaftHQ/testng-archetype/releases/latest)._**
+<br/>**_NOTE 2: Customize `"-DgroupId=io.github.shafthq"` and `"-DartifactId=using_SHAFT_Engine"` with the groupId and artifactId that you want to use for the new project._** 
