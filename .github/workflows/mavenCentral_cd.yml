@@ -48,7 +48,7 @@ jobs:
           tag: ${{ env.RELEASE_VERSION }}
       - name: Setup Prerequisites
         run: |
-          git config "--global user.signingKey ${{ secrets.GPG_KEYNAME }}"
+          git config --global user.signingKey "${{ secrets.GPG_KEYNAME }}"
           git config --global commit.gpgsign true
           gpg --version
           gpgconf --kill gpg-agent
