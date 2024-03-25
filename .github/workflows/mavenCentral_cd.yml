@@ -31,9 +31,8 @@ jobs:
       - name: Run Integration Tests
         continue-on-error: false
         env:
-          gpg:
-            keyname: ${{ secrets.GPG_KEYNAME }}
-            passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          gpg.keyname: ${{ secrets.GPG_KEYNAME }}
+          gpg.passphrase: ${{ secrets.GPG_PASSPHRASE }}
         run: mvn clean install -DskipTests
       # Captures the engine version from the pom.xml
       - name: Set Release Version Number
