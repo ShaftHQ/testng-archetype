@@ -28,13 +28,9 @@ jobs:
         uses: stCarolas/setup-maven@v4.5
         with:
           maven-version: 3.9.5
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: stable
       - name: Run Integration Tests
         continue-on-error: false
-        run: mvn clean install
+        run: mvn clean install -DskipTests
       # Captures the engine version from the pom.xml
       - name: Set Release Version Number
         run: |

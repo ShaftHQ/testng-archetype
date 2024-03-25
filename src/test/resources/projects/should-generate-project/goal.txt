@@ -1,1 +1,1 @@
-clean test verify
+clean install -DskipTests
