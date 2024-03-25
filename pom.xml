@@ -35,6 +35,15 @@
                     <artifactId>maven-archetype-plugin</artifactId>
                     <configuration>
                         <ignoreEOLStyle>true</ignoreEOLStyle>
+                        <encoding>UTF-8</encoding>
+                        <defaultEncoding>UTF-8</defaultEncoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
                     </configuration>
                 </plugin>
             </plugins>
