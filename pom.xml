@@ -8,6 +8,26 @@
     <packaging>maven-archetype</packaging>
     <name>SHAFT_Engine: TestNG Archetype</name>
     <description>SHAFT_Engine: TestNG Archetype</description>
+    <url>https://shafthq.github.io/</url>
+     <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Mohab Mohie</name>
+            <email>Mohab.MohieElDeen@outlook.com</email>
+            <organization>GitHub</organization>
+            <organizationUrl>https://github.com/ShaftHQ</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/ShaftHQ/testng-archetype.git</connection>
+        <developerConnection>scm:git:ssh://github.com/ShaftHQ/testng-archetype.git</developerConnection>
+        <url>https://github.com/ShaftHQ/testng-archetype</url>
+    </scm>    
     <properties>
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
