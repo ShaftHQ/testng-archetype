@@ -11,8 +11,17 @@ updates:
 
   # Maintain dependencies for maven
   - package-ecosystem: "maven"
-    directory: "/"
+    directories:
+      - "/"
+      - "/src/test/resources/projects/should-generate-project/reference"
+      - "/src/main/resources/archetype-resources"
     schedule:
       interval: "daily"
       time: "00:00"
       timezone: "Africa/Cairo"
+    groups:
+       dev-dependencies:
+          applies-to: version-updates
+          patterns:
+            - "*"
+    target-branch: main
