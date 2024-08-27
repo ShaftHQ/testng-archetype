@@ -13,8 +13,8 @@ updates:
   - package-ecosystem: "maven"
     directories:
       - "/"
-      - "/src/test/resources/projects/should-generate-project/reference"
-      - "/src/main/resources/archetype-resources"
+      - "src/test/resources/projects/should-generate-project/reference/"
+      - "src/main/resources/archetype-resources/"
     schedule:
       interval: "daily"
       time: "00:00"
