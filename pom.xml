@@ -33,7 +33,7 @@
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
         <maven-archetype-packaging.version>3.2.1</maven-archetype-packaging.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
-        <maven-gpg-plugin.version>3.2.5</maven-gpg-plugin.version>
+        <maven-gpg-plugin.version>3.2.6</maven-gpg-plugin.version>
     </properties>
     <build>
         <plugins>
@@ -52,7 +52,7 @@
             <plugin>
                 <groupId>org.sonatype.central</groupId>
                 <artifactId>central-publishing-maven-plugin</artifactId>
-                <version>0.5.0</version>
+                <version>0.6.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <publishingServerId>central</publishingServerId>
