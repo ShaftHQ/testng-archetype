@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.shafthq</groupId>
     <artifactId>testng-archetype</artifactId>
-    <version>8.3.20240829</version>
+    <version>8.4.20241024</version>
     <packaging>maven-archetype</packaging>
     <name>SHAFT_Engine: TestNG Archetype</name>
     <description>SHAFT_Engine: TestNG Archetype</description>
