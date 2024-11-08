@@ -31,7 +31,7 @@
     <properties>
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-        <maven-archetype-packaging.version>3.3.0</maven-archetype-packaging.version>
+        <maven-archetype-packaging.version>3.3.1</maven-archetype-packaging.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
     </properties>
