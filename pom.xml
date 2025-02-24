@@ -29,7 +29,7 @@
         <url>https://github.com/ShaftHQ/testng-archetype</url>
     </scm>
     <properties>
-        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
         <maven-archetype-packaging.version>3.3.1</maven-archetype-packaging.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
