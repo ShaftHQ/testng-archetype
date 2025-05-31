@@ -16,7 +16,7 @@
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
         <surefire-testng.version>3.5.3</surefire-testng.version>
         <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
-        <junit-jupiter-engine.version>5.12.2</junit-jupiter-engine.version>
+        <surefireArgLine></surefireArgLine>
     </properties>
     <dependencies>
         <dependency>
@@ -75,25 +75,30 @@
                             </dependency>
                         </dependencies>
                         <configuration>
+                            <encoding>UTF-8</encoding>
                             <systemPropertyVariables>
                                 <testng.dtd.http>true</testng.dtd.http>
+                                <jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
                             </systemPropertyVariables>
+                            <testFailureIgnore>true</testFailureIgnore>
                             <failIfNoSpecifiedTests>false</failIfNoSpecifiedTests>
                             <failIfNoTests>false</failIfNoTests>
                             <trimStackTrace>false</trimStackTrace>
                             <useFile>false</useFile>
-                            <encoding>UTF-8</encoding>
                             <argLine>
-                                -javaagent:${user.home}/.m2/repository/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar
+                                @{argLine} ${surefireArgLine}
+                                -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar"
                             </argLine>
                             <properties>
                                 <property>
-                                    <name>usedefaultlisteners</name>
-                                    <value>false</value>
-                                </property>
-                                <property>
                                     <name>listener</name>
                                     <value>com.shaft.listeners.TestNGListener</value>
+                                </property>
+                                <property>
+                                    <name>reporter</name>
+                                    <value>
+                                        org.testng.reporters.XMLReporter:generateTestResultAttributes=true,generateGroupsAttribute=true
+                                    </value>
                                 </property>
                             </properties>
                         </configuration>
