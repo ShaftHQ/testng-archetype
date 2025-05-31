@@ -10,7 +10,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="testng-archetype" />
+        <module name="using_shaft_engine" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="archetype-resources" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
