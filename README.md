@@ -12,7 +12,4 @@ To Generate a project just follow these simple steps:
 mvn archetype:generate "-DarchetypeGroupId=io.github.shafthq" "-DarchetypeArtifactId=testng-archetype" "-DarchetypeVersion=${archetype.version}" "-DinteractiveMode=false" "-DgroupId=io.github.shafthq" "-DartifactId=using_SHAFT_Engine"
 ```
 **_NOTE 1: Replace `${archetype.version}` with [the latest SHAFT_Engine: TestNG Archetype version](https://github.com/ShaftHQ/testng-archetype/releases/latest)._**
-
-https://github.com/ShaftHQ/testng-archetype/blob/cdcd69eb5180ce4985208b1bbb4c8c45048e92b7/pom.xml#L5C5-L7C36
-
 <br/>**_NOTE 2: Customize `"-DgroupId=io.github.shafthq"` and `"-DartifactId=using_SHAFT_Engine"` with the groupId and artifactId that you want to use for the new project._** 
