@@ -14,8 +14,8 @@
         <aspectjweaver.version>1.9.24</aspectjweaver.version>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-        <surefire-testng.version>3.5.3</surefire-testng.version>
-        <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
+        <surefire-testng.version>3.5.4</surefire-testng.version>
+        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
         <surefireArgLine></surefireArgLine>
     </properties>
     <dependencies>
