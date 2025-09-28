@@ -79,6 +79,10 @@
                             <systemPropertyVariables>
                                 <testng.dtd.http>true</testng.dtd.http>
                                 <jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
+                                <!-- Pass browser parameter to tests -->
+                                <browser>${browser}</browser>
+                                <!-- Pass Selenium Grid execution address to tests -->
+                                <executionAddress>${executionAddress}</executionAddress>
                             </systemPropertyVariables>
                             <testFailureIgnore>true</testFailureIgnore>
                             <failIfNoSpecifiedTests>false</failIfNoSpecifiedTests>
