@@ -3,7 +3,9 @@ updates:
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
+      time: "00:00"
+      timezone: "Africa/Cairo"
     open-pull-requests-limit: 10
     groups:
        dev-dependencies:
@@ -14,5 +16,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
+      time: "00:00"
+      timezone: "Africa/Cairo"
     open-pull-requests-limit: 10
