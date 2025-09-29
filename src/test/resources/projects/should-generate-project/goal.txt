@@ -1,1 +1,1 @@
-clean install -DskipTests -Dmaven.test.skip=true
+clean install -DskipTests
