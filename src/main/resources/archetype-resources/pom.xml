@@ -24,6 +24,16 @@
             <artifactId>SHAFT_ENGINE</artifactId>
             <version>${shaft_engine.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectjweaver.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-testng</artifactId>
+            <version>${surefire-testng.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -86,7 +96,7 @@
                             <trimStackTrace>false</trimStackTrace>
                             <useFile>false</useFile>
                             <argLine>
-                                @{argLine} ${surefireArgLine}
+                                ${surefireArgLine}
                                 -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar"
                             </argLine>
                             <properties>
