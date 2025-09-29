@@ -1,1 +1,1 @@
-clean install -DskipTests
+clean install -DskipTests -e
