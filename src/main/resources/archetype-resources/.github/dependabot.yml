@@ -8,11 +8,11 @@ updates:
       timezone: "Africa/Cairo"
     open-pull-requests-limit: 10
     groups:
-      dev-dependencies:
-        applies-to: version-updates
-        patterns:
-          - "*"
-
+       dev-dependencies:
+          applies-to: version-updates
+          patterns:
+            - "*"
+    
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
