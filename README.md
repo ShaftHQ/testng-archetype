@@ -2,6 +2,20 @@
 
 This is a Maven Archetype for setting up a sample SHAFT_Engine + TestNG project.
 
+## Automated Version Synchronization
+
+This repository includes an automated workflow that keeps all SHAFT Engine versions synchronized. When the SHAFT Engine version is updated in the archetype template, the workflow automatically:
+
+- ✅ Detects version mismatches between the project version and SHAFT Engine version
+- ✅ Updates the main project version to match the latest SHAFT Engine version  
+- ✅ Synchronizes all archetype template files
+- ✅ Maintains consistency across test reference files
+- ✅ Commits and pushes changes automatically
+
+The synchronization workflow runs on every push to the main branch when POM files are modified, ensuring that manual version updates are no longer needed.
+
+## Usage
+
 To Generate a project just follow these simple steps:
 
 1. [Download the latest version of mvn](https://maven.apache.org/download.cgi)
