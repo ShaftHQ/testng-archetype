@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5
@@ -105,43 +106,53 @@ jobs:
             grep -r "$CURRENT_PROJECT_VERSION" pom.xml src/main/resources/archetype-resources/pom.xml src/test/resources/projects/should-generate-project/reference/pom.xml | grep -v "using_shaft_engine" | grep -v "0.0.1"
           fi
           
-      - name: Commit and push changes
+      - name: Create Pull Request
         if: steps.check_sync.outputs.sync_needed == 'true'
-        run: |
-          # Configure git
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          
-          # Stage changes
-          git add pom.xml src/main/resources/archetype-resources/pom.xml src/test/resources/projects/should-generate-project/reference/pom.xml
-          
-          # Check if there are changes to commit
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            # Commit changes
-            git commit -m "🔄 Auto-sync project version to $SHAFT_ENGINE_VERSION
-
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: |
+            🔄 Auto-sync project version to ${{ env.SHAFT_ENGINE_VERSION }}
+            
             - Updated project version in main pom.xml
             - Updated SHAFT Engine version in archetype template  
             - Updated SHAFT Engine version in test reference
             
-            This automated update keeps all version references in sync with the SHAFT Engine version."
+            This automated update keeps all version references in sync with the SHAFT Engine version.
+          branch: sync-versions/${{ env.SHAFT_ENGINE_VERSION }}
+          delete-branch: true
+          title: "🔄 Sync project version to ${{ env.SHAFT_ENGINE_VERSION }}"
+          body: |
+            ## Automated Version Synchronization
             
-            # Push changes
-            git push
-            echo "Changes committed and pushed successfully"
-          fi
+            This PR was automatically created to sync the project version with the SHAFT Engine version.
+            
+            ### Changes:
+            - ✅ Updated project version in `pom.xml` to `${{ env.SHAFT_ENGINE_VERSION }}`
+            - ✅ Updated SHAFT Engine version in `src/main/resources/archetype-resources/pom.xml` to `${{ env.SHAFT_ENGINE_VERSION }}`
+            - ✅ Updated SHAFT Engine version in `src/test/resources/projects/should-generate-project/reference/pom.xml` to `${{ env.SHAFT_ENGINE_VERSION }}`
+            
+            ### Previous Version:
+            - `${{ env.CURRENT_PROJECT_VERSION }}`
+            
+            ### New Version:
+            - `${{ env.SHAFT_ENGINE_VERSION }}`
+            
+            This automated update ensures all version references remain in sync with the SHAFT Engine version.
+          labels: |
+            automated
+            version-sync
           
       - name: Create summary
         run: |
           if [ "${{ steps.check_sync.outputs.sync_needed }}" == "true" ]; then
-            echo "✅ **Version Sync Completed**" >> $GITHUB_STEP_SUMMARY
-            echo "- Project version updated from \`$CURRENT_PROJECT_VERSION\` to \`$SHAFT_ENGINE_VERSION\`" >> $GITHUB_STEP_SUMMARY
-            echo "- Updated files:" >> $GITHUB_STEP_SUMMARY
+            echo "✅ **Version Sync Pull Request Created**" >> $GITHUB_STEP_SUMMARY
+            echo "- A pull request has been created to update the project version from \`$CURRENT_PROJECT_VERSION\` to \`$SHAFT_ENGINE_VERSION\`" >> $GITHUB_STEP_SUMMARY
+            echo "- Updated files in the PR:" >> $GITHUB_STEP_SUMMARY
             echo "  - \`pom.xml\` (project version)" >> $GITHUB_STEP_SUMMARY
             echo "  - \`src/main/resources/archetype-resources/pom.xml\` (SHAFT Engine version)" >> $GITHUB_STEP_SUMMARY
             echo "  - \`src/test/resources/projects/should-generate-project/reference/pom.xml\` (SHAFT Engine version)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Please review and merge the pull request to complete the version synchronization." >> $GITHUB_STEP_SUMMARY
           else
             echo "ℹ️ **No Sync Needed**" >> $GITHUB_STEP_SUMMARY
             echo "- Project version (\`$CURRENT_PROJECT_VERSION\`) already matches SHAFT Engine version" >> $GITHUB_STEP_SUMMARY
